@@ -13,21 +13,31 @@
  */
 package ServiceXMLProcessing;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Will Newbury
  */
 public class ServiceXMLProcessor {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 		String baseDir = args[0];
 
 		ServiceXMLFileVisitor serviceXMLFileVisitor = new ServiceXMLFileVisitor();
 
 		Files.walkFileTree(Paths.get(baseDir), serviceXMLFileVisitor);
-	}
 
+		List<Entity> entities = new ArrayList<Entity>();
+
+		for (File serviceXMLFile : serviceXMLFileVisitor.getServiceXMLFiles()) {
+			entities.addAll(ServiceXMLReader.readFile(serviceXMLFile));
+		}
+
+		EralchemyAdaptor.processEntities(entities);
+	}
 }

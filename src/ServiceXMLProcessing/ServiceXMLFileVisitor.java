@@ -13,11 +13,14 @@
  */
 package ServiceXMLProcessing;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author wnewbury
@@ -35,8 +38,15 @@ public class ServiceXMLFileVisitor extends SimpleFileVisitor<Path> {
 			return FileVisitResult.CONTINUE;
 		}
 
+		serviceXMLFiles.add(new File(path));
 
 		return FileVisitResult.CONTINUE;
 	}
+
+	public List<File> getServiceXMLFiles() {
+		return serviceXMLFiles;
+	}
+
+	private List<File> serviceXMLFiles = new ArrayList<>();
 
 }
