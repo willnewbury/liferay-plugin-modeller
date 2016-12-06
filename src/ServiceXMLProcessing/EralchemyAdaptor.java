@@ -46,7 +46,7 @@ public class EralchemyAdaptor {
                     }
 
                     writer.write(column.getName());
-                    writer.write(" {label:\"" + column.getName() + "\"}\n");
+                    writer.write(" {label:\"" + column.getType() + "\"}\n");
                 }
             }
 
