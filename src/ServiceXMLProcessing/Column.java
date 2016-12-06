@@ -17,39 +17,38 @@ package ServiceXMLProcessing;
 /**
  * @author Timothy Bell
  */
-public class Entity {
+public class Column {
 
-    public Entity(List<Column> columns, String name, List<Rel> rels) {
-        setColumns(columns);
+    public Column (boolean isPrimary, String name, String type) {
+        setIsPrimary(isPrimary);
         setName(name);
-        setRels(rels);
+        setType(type);
     }
-
-    public List<Column> getColumns() {
-        return _columns;
+    public boolean isPrimary() {
+        return _isPrimary;
     }
 
     public String getName() {
         return _name;
     }
 
-    public List<Rel> getRels() {
-        return _rels;
+    public String getType() {
+        return _type;
     }
 
-    public void setColumns(List<Column> columns) {
-        _columns = columns;
+    public void setIsPrimary(boolean isPrimary) {
+        _isPrimary = isPrimary;
     }
 
     public void setName(String name) {
         _name = name;
     }
 
-    public void setRels(List<Rel> rels) {
-        _rels = rels;
+    public void setType(String type) {
+        _name = type;
     }
 
-    private List<Column> _columns = new ArrayList<Column>();
+    private boolean _isPrimary = false;
     private String _name = "";
-    private List<Rel> _rels = new ArrayList<Rel>();
+    private String _type = "";
 }
