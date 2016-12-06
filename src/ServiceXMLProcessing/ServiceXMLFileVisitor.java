@@ -35,7 +35,6 @@ public class ServiceXMLFileVisitor extends SimpleFileVisitor<Path> {
 			return FileVisitResult.CONTINUE;
 		}
 
-		System.out.println("########################## Found Service XML: " + path);
 
 		return FileVisitResult.CONTINUE;
 	}

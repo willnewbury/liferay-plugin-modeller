@@ -20,9 +20,9 @@ package ServiceXMLProcessing;
 public class Column {
 
     public Column (boolean isPrimary, String name, String type) {
-        setIsPrimary(isPrimary);
-        setName(name);
-        setType(type);
+        _isPrimary = isPrimary;
+        _name = name;
+        _type = type;
     }
     public boolean isPrimary() {
         return _isPrimary;
@@ -45,7 +45,7 @@ public class Column {
     }
 
     public void setType(String type) {
-        _name = type;
+        _type = type;
     }
 
     private boolean _isPrimary = false;

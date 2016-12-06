@@ -23,9 +23,9 @@ import java.util.List;
 public class Entity {
 
     public Entity(List<Column> columns, String name, List<Rel> rels) {
-        setColumns(columns);
-        setName(name);
-        setRels(rels);
+        _columns = columns;
+        _name = name;
+        _rels = rels;
     }
 
     public List<Column> getColumns() {

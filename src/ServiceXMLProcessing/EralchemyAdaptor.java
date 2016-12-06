@@ -26,7 +26,7 @@ import java.util.List;
  */
 public class EralchemyAdaptor {
 
-    public void processEntities(List<Entity> entities)
+    public static void processEntities(List<Entity> entities)
         throws IOException {
 
         File file = new File(_fileName);
@@ -54,9 +54,7 @@ public class EralchemyAdaptor {
                 for (Rel rel: entity.getRels()) {
                     writer.write(entity.getName() + " *--? ");
 
-                    Entity relEntity = rel.getEntity();
-
-                    writer.write(relEntity.getName() + "\n");
+                    writer.write(rel.getEntityName() + "\n");
                 }
             }
 
@@ -68,5 +66,5 @@ public class EralchemyAdaptor {
 
     }
 
-    private String _fileName = "output/ServiceXMLProcessing.er";
+    private static String _fileName = "output/ServiceXMLProcessing.er";
 }
