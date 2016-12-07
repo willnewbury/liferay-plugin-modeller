@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * @author Timothy Bell
  */
-public class EralchemyAdaptor {
+public class ERDAdaptor {
 
 	public static void processEntities(List<Entity> entities)
 		throws IOException {

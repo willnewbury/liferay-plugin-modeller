@@ -14,7 +14,6 @@
 package ServiceXMLProcessing;
 
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -38,6 +37,6 @@ public class ServiceXMLProcessor {
 			entities.addAll(ServiceXMLReader.readFile(serviceXMLFile));
 		}
 
-		EralchemyAdaptor.processEntities(entities);
+		ERDAdaptor.processEntities(entities);
 	}
 }
