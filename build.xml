@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE project>
 
-<project name="jmeterProcessing" default="process-reports" basedir=".">
+<project name="serviceXMLProcessing" default="process-xmls" basedir=".">
 	<target name="init">
 		<property name="sourceDir" value="src" />
 		<property name="outputDir" value="classes" />
