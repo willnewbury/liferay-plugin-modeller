@@ -22,37 +22,37 @@ import java.util.List;
  */
 public class Entity {
 
-    public Entity(List<Column> columns, String name, List<Rel> rels) {
-        _columns = columns;
-        _name = name;
-        _rels = rels;
-    }
+	public Entity(List<Column> columns, String name, List<Rel> rels) {
+		_columns = columns;
+		_name = name;
+		_rels = rels;
+	}
 
-    public List<Column> getColumns() {
-        return _columns;
-    }
+	public List<Column> getColumns() {
+		return _columns;
+	}
 
-    public String getName() {
-        return _name;
-    }
+	public String getName() {
+		return _name;
+	}
 
-    public List<Rel> getRels() {
-        return _rels;
-    }
+	public List<Rel> getRels() {
+		return _rels;
+	}
 
-    public void setColumns(List<Column> columns) {
-        _columns = columns;
-    }
+	public void setColumns(List<Column> columns) {
+		_columns = columns;
+	}
 
-    public void setName(String name) {
-        _name = name;
-    }
+	public void setName(String name) {
+		_name = name;
+	}
 
-    public void setRels(List<Rel> rels) {
-        _rels = rels;
-    }
+	public void setRels(List<Rel> rels) {
+		_rels = rels;
+	}
 
-    private List<Column> _columns = new ArrayList<Column>();
-    private String _name = "";
-    private List<Rel> _rels = new ArrayList<Rel>();
+	private List<Column> _columns = new ArrayList<Column>();
+	private String _name = "";
+	private List<Rel> _rels = new ArrayList<Rel>();
 }

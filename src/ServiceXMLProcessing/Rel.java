@@ -19,33 +19,33 @@ package ServiceXMLProcessing;
  */
 public class Rel {
 
-    public Rel(String entityName, Integer type) {
-        _entityName = entityName;
-        _type = type;
-    }
+	public Rel(String entityName, Integer type) {
+		_entityName = entityName;
+		_type = type;
+	}
 
-    public String getEntityName() {
-        return _entityName;
-    }
+	public String getEntityName() {
+		return _entityName;
+	}
 
-    public Integer getType() {
-        return _type;
-    }
+	public Integer getType() {
+		return _type;
+	}
 
-    public void setType(Integer type) {
-        _type = type;
-    }
+	public void setType(Integer type) {
+		_type = type;
+	}
 
-    public void setEntityName(String entityName) {
-        _entityName = entityName;
-    }
+	public void setEntityName(String entityName) {
+		_entityName = entityName;
+	}
 
-    private String _entityName = null;
-    private Integer _type = 0;
-	
+	private String _entityName = null;
+	private Integer _type = 0;
+
 	public static int TYPE_DIRECT = 0;
 	public static int TYPE_MAPPING = 1;
 	public static int TYPE_MANUAL = 2;
-	
+
 
 }

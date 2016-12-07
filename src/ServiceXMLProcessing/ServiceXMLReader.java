@@ -32,8 +32,8 @@ public class ServiceXMLReader {
 		DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
 		Document doc = documentBuilder.parse(file);
 
-		doc.getDocumentElement().normalize();	
-		
+		doc.getDocumentElement().normalize();
+
 		System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
 
 		NodeList entityNodeList = doc.getElementsByTagName("entity");
@@ -50,9 +50,9 @@ public class ServiceXMLReader {
 	private static void populateColumnsAndRels(NodeList entityNodeList, List<Entity> entities) throws Exception {
 		for (int i = 0; i < entityNodeList.getLength(); i++) {
 			Node node = entityNodeList.item(i);
-			
+
 			Element entityElement = (Element)node;
-			
+
 			String entityName = entityElement.getAttribute("name");
 
 			NodeList childNodeList = node.getChildNodes();
@@ -67,7 +67,7 @@ public class ServiceXMLReader {
 					Element childElement = (Element)childNode;
 
 					Boolean mappingTable = childElement.hasAttribute("mapping_table");
-					
+
 					if (childElement.hasAttribute("by")) {
 						continue;
 					}
@@ -92,7 +92,7 @@ public class ServiceXMLReader {
 
 					String type = childElement.getAttribute("type");
 
-					Column column = new Column(primary, name, type);	
+					Column column = new Column(primary, name, type);
 
 					columns.add(column);
 				}
@@ -101,13 +101,13 @@ public class ServiceXMLReader {
 			Entity entity = new Entity(columns, entityName, relations);
 
 			entities.add(entity);
-		}	
+		}
 	}
-	
+
 	private static void populatePrimaryKeys(NodeList entityNodeList) throws Exception {
 		for (int i = 0; i < entityNodeList.getLength(); i++) {
 			Node node = entityNodeList.item(i);
-			
+
 			Element entityElement = (Element)node;
 
 			NodeList childNodeList = node.getChildNodes();
@@ -117,7 +117,7 @@ public class ServiceXMLReader {
 
 				if (childNode.getNodeType() == Node.ELEMENT_NODE) {
 					Element childElement = (Element)childNode;
-					
+
 					String name = childElement.getAttribute("name");
 					Boolean primary = Boolean.parseBoolean(childElement.getAttribute("primary"));
 

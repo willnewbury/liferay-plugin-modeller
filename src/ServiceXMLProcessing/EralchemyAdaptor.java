@@ -26,45 +26,50 @@ import java.util.List;
  */
 public class EralchemyAdaptor {
 
-    public static void processEntities(List<Entity> entities)
-        throws IOException {
+	public static void processEntities(List<Entity> entities)
+		throws IOException {
 
-        File file = new File(_fileName);
+		File file = new File(_fileName);
 
-        BufferedWriter writer = new BufferedWriter(
-            new OutputStreamWriter(new FileOutputStream(file), "utf-8"));
+		BufferedWriter writer = new BufferedWriter(
+			new OutputStreamWriter(new FileOutputStream(file), "utf-8"));
 
-        try {
-            for (Entity entity: entities) {
-                writer.write("[" + entity.getName() + "]\n");
+		try {
+			for (Entity entity: entities) {
+				writer.write("[" + entity.getName() + "]\n");
 
-                for (Column column: entity.getColumns()) {
-                    writer.write("\t");
+				for (Column column: entity.getColumns()) {
+					writer.write("\t");
 
-                    if (column.isPrimary()) {
-                        writer.write("*");
-                    }
+					if (column.isPrimary()) {
+						writer.write("*");
+					}
 
-                    writer.write(column.getName());
-                    writer.write(" {label:\"" + column.getType() + "\"}\n");
-                }
-            }
+					writer.write(column.getName());
+					writer.write(" {label:\"" + column.getType() + "\"}\n");
+				}
+			}
 
-            for (Entity entity: entities) {
-                for (Rel rel: entity.getRels()) {
-                    writer.write(entity.getName() + " *--? ");
+			for (Entity entity: entities) {
+				for (Rel rel: entity.getRels()) {
+					if (rel.getType() == Rel.TYPE_MAPPING) {
+						writer.write(entity.getName() + " *--* ");
+					}
+					else {
+						writer.write(entity.getName() + " *--1 ");
+					}
 
-                    writer.write(rel.getEntityName() + "\n");
-                }
-            }
+					writer.write(rel.getEntityName() + "\n");
+				}
+			}
 
-            writer.flush();
-        }
-        finally {
-            writer.close();
-        }
+			writer.flush();
+		}
+		finally {
+			writer.close();
+		}
 
-    }
+	}
 
-    private static String _fileName = "output/ServiceXMLProcessing.er";
+	private static String _fileName = "output/ServiceXMLProcessing.er";
 }

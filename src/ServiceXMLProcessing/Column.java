@@ -19,36 +19,36 @@ package ServiceXMLProcessing;
  */
 public class Column {
 
-    public Column (boolean isPrimary, String name, String type) {
-        _isPrimary = isPrimary;
-        _name = name;
-        _type = type;
-    }
-    public boolean isPrimary() {
-        return _isPrimary;
-    }
+	public Column (boolean isPrimary, String name, String type) {
+		_isPrimary = isPrimary;
+		_name = name;
+		_type = type;
+	}
+	public boolean isPrimary() {
+		return _isPrimary;
+	}
 
-    public String getName() {
-        return _name;
-    }
+	public String getName() {
+		return _name;
+	}
 
-    public String getType() {
-        return _type;
-    }
+	public String getType() {
+		return _type;
+	}
 
-    public void setIsPrimary(boolean isPrimary) {
-        _isPrimary = isPrimary;
-    }
+	public void setIsPrimary(boolean isPrimary) {
+		_isPrimary = isPrimary;
+	}
 
-    public void setName(String name) {
-        _name = name;
-    }
+	public void setName(String name) {
+		_name = name;
+	}
 
-    public void setType(String type) {
-        _type = type;
-    }
+	public void setType(String type) {
+		_type = type;
+	}
 
-    private boolean _isPrimary = false;
-    private String _name = "";
-    private String _type = "";
+	private boolean _isPrimary = false;
+	private String _name = "";
+	private String _type = "";
 }
