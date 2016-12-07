@@ -34,8 +34,6 @@ public class ServiceXMLReader {
 
 		doc.getDocumentElement().normalize();
 
-		System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
-
 		NodeList entityNodeList = doc.getElementsByTagName("entity");
 
 		List<Entity> entities = new ArrayList<Entity>();
