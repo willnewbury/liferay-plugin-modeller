@@ -66,8 +66,6 @@ public class ServiceXMLReader {
 				if (childNode.getNodeType() == Node.ELEMENT_NODE) {
 					Element childElement = (Element)childNode;
 
-					Boolean mappingTable = childElement.hasAttribute("mapping_table");
-
 					String childElementTagName = childElement.getTagName();
 
 					if (childElementTagName.equals("finder") || childElementTagName.equals("reference") || childElementTagName.equals("order")) {
@@ -76,6 +74,8 @@ public class ServiceXMLReader {
 
 					String name = childElement.getAttribute("name");
 					Boolean primary = Boolean.parseBoolean(childElement.getAttribute("primary"));
+
+					Boolean mappingTable = childElement.hasAttribute("mapping-table");
 
 					if (mappingTable) {
 						String mappingTableEntityName = childElement.getAttribute("entity");
