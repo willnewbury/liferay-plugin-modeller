@@ -6,6 +6,7 @@ As a proof of concept, we created an adaptor to output a simple text file, which
 ## Produce text file
 1. Clone git repo
 2. In folder that you cloned into:
+	* create a folder named "output" next in the highest level folder (next to src
 	* ant clean compile  
 	* ant process-xmls -Dportlet.base.dir="PATH TO PORTLET BASE DIR"  
 

@@ -66,7 +66,7 @@ public class ServiceXMLReader {
 
 					String childElementTagName = childElement.getTagName();
 
-					if (childElementTagName.equals("finder") || childElementTagName.equals("reference") || childElementTagName.equals("order")) {
+					if (childElementTagName.equals("finder") || childElementTagName.equals("reference") || childElementTagName.equals("order") || childElementTagName.equals("tx-required")) {
 						continue;
 					}
 
